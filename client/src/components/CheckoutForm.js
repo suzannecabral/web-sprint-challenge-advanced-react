@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useForm } from "../hooks/useForm";
-import { useFormTwo } from "../hooks/useFormTwo";
+import React, { useState, useEffect } from "react";
+// import { useForm } from "../hooks/useForm";
+import { useForm } from "../hooks/useFormTwo";
 
 const initialValue = {
   firstName: "",
@@ -16,14 +16,14 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues, handleChanges] = useFormTwo(initialValue);
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowSuccessMessage(true);
-  };
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [values, setValues, handleChanges, handleSubmit, showSuccessMessage] = useForm(initialValue);
+  
+  
+  // const formCb = setShowSuccessMessage(true);
+  // useEffect(()=>{
+  // });
+  
 
   return (
     <>
